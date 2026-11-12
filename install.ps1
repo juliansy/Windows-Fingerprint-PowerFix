@@ -44,7 +44,7 @@ if (-not $isAdmin) {
         exit $p.ExitCode
     } catch {
         Write-Host 'Administrator rights were declined.'
-        exit 1
+        exit 2
     }
 }
 
