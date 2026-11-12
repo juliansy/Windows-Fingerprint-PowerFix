@@ -1,6 +1,6 @@
 # Windows-Fingerprint-PowerFix
 
-**简体中文** | [English](README.en.md)
+<p align="center"><b>简体中文</b> | <a href="README.en.md">English</a></p>
 
 <div align="center">
 
@@ -100,6 +100,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 只想装好、不想当场跑一次，加 `-SkipVerify`。
 
 如果机器上还留着旧版本建的计划任务，安装脚本只会把它们列出来、不删除；想顺手清掉加 `-RemoveLegacyTasks`。
+
+如果它解决了你的问题，麻烦点一个 ⭐ Star——不是图好看，而是让下一个被同样问题卡住的人能搜到这里。
 
 ## 验证
 

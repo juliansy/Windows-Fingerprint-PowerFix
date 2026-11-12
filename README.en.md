@@ -1,6 +1,6 @@
 # Windows-Fingerprint-PowerFix
 
-[简体中文](README.md) | **English**
+<p align="center"><a href="README.md">简体中文</a> | <b>English</b></p>
 
 <div align="center">
 
@@ -100,6 +100,8 @@ If detection picks the wrong device, pass the instance ID explicitly (Device Man
 Add `-SkipVerify` to install without running the task immediately.
 
 If an older version of this fix left a task behind, the installer only lists it and never deletes it; add `-RemoveLegacyTasks` to remove it.
+
+If this fixed your problem, please give the repository a ⭐ Star. Not for vanity — it is how the next person with the same broken sensor finds this page.
 
 ## Verify
 
