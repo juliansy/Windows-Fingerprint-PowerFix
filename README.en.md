@@ -76,7 +76,7 @@ Windows 10/11. The script elevates itself; you will see one UAC prompt — click
 
 ### Option 1: no command line
 
-1. Download [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip) — this link always points at the latest release;
+1. Download [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip);
 2. extract the zip to a folder you can find (for example a new folder on the Desktop);
 3. open that folder and **double-click `install.cmd`**;
 4. click **Yes** on the UAC prompt and let the window finish;
@@ -97,9 +97,7 @@ cd Windows-Fingerprint-PowerFix
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Both options meet here.
-
-**Device detection is automatic — no InstanceId to copy.** The installer lists what it found and runs the task once:
+The installer detects the device automatically and runs the task once:
 
 ```
 [*] detecting biometric devices
@@ -118,9 +116,9 @@ If detection picks the wrong device, pass the instance ID explicitly (Device Man
 
 Add `-SkipVerify` to install without running the task immediately.
 
-If an older version of this fix left a task behind, the installer only lists it and never deletes it; add `-RemoveLegacyTasks` to remove it.
+`-RemoveLegacyTasks` also removes fix tasks left behind by earlier versions.
 
-If this fixed your problem, please give the repository a ⭐ Star. Not for vanity — it is how the next person with the same broken sensor finds this page.
+If this fixed your problem, please give the repository a ⭐ Star.
 
 ## Verify
 
@@ -142,7 +140,7 @@ Removes the task and restores the factory default for the device (power saving a
 ## Scope and limits
 
 - Applies to UMDF devices whose driver declares WUDF idle power-off and whose user setting is rewritten by the framework; fingerprint sensors are the common case;
-- a correction window of about 12 seconds after boot: if the machine sleeps between the framework write and the fix, it may still fail to wake. In practice this is hard to hit — boot to standby normally takes well over 30 seconds, and the keyboard, mouse and power button remain wake sources;
+- a correction window of about 12 seconds after boot: if the machine sleeps between the framework write and the fix, it may still fail to wake;
 - if the device instance ID changes (for example after moving to another USB port), run `install.ps1` again;
 - after updating or reinstalling the driver, run the task once manually or sign out and back in.
 
@@ -163,7 +161,7 @@ uninstall.cmd                  double-click: calls uninstall.ps1
 install.ps1                    install: self-elevate, detect devices, register task, self-check
 uninstall.ps1                  uninstall: self-elevate, remove task, restore factory default
 src/Disable-FpPowerSaving.ps1  the worker script the SYSTEM task runs
-docs/root-cause.md             root cause and evidence (Chinese)
+docs/root-cause.md             root cause, evidence and ruled-out approaches (Chinese)
 ```
 
 ## References

@@ -76,7 +76,7 @@ HKLM\SYSTEM\CurrentControlSet\Enum\<设备实例>\Device Parameters\WudfPowerPol
 
 ### 方法一：不使用命令行
 
-1. 点这里下载 [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip)，始终是最新版本；
+1. 下载 [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip)；
 2. 把 zip 解压到一个你找得到的位置（例如桌面上新建一个文件夹）；
 3. 进入解压出来的文件夹，**双击 `install.cmd`**；
 4. UAC 弹窗里点「是」，等窗口自己跑完；
@@ -97,9 +97,7 @@ cd Windows-Fingerprint-PowerFix
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-两种方法到这里汇合。
-
-**设备识别是自动的，不需要手抄 InstanceId。** 脚本会列出识别到的设备并当场跑一次任务：
+脚本会自动识别设备，并当场跑一次任务：
 
 ```
 [*] detecting biometric devices
@@ -118,9 +116,9 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 只想装好、不想当场跑一次，加 `-SkipVerify`。
 
-如果机器上还留着旧版本建的计划任务，安装脚本只会把它们列出来、不删除；想顺手清掉加 `-RemoveLegacyTasks`。
+`-RemoveLegacyTasks`：一并清理早先版本留下的修复任务。
 
-如果它解决了你的问题，麻烦点一个 ⭐ Star——不是图好看，而是让下一个被同样问题卡住的人能搜到这里。
+如果它解决了你的问题，欢迎点一个 ⭐ Star。
 
 ## 验证
 
@@ -142,7 +140,7 @@ powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
 ## 适用范围与限制
 
 - 适用于「驱动声明 WUDF 空闲断电、用户设置会被框架重写」的 UMDF 设备，指纹传感器是常见一类；
-- 开机后约 12 秒的纠正时间窗：框架写入之后、任务改回之前若恰好入睡，仍可能唤不醒。实际很难踩中——开机到进入待机通常远超 30 秒，且键盘、鼠标、电源键仍是唤醒源；
+- 开机后约 12 秒的纠正时间窗：框架写入之后、任务改回之前若恰好入睡，仍可能唤不醒；
 - 设备实例 ID 变化（如换 USB 口导致父集线器变化）后，重新运行 `install.ps1`；
 - 更新或重装该设备驱动后，手动运行一次任务，或注销重登。
 
@@ -163,7 +161,7 @@ uninstall.cmd                  双击即可：调用 uninstall.ps1
 install.ps1                    安装：自动提权、识别设备、注册任务、自检
 uninstall.ps1                  卸载：自动提权、删任务、恢复出厂默认
 src/Disable-FpPowerSaving.ps1  实际干活的脚本，由 SYSTEM 计划任务调用
-docs/root-cause.md             根因与取证：为什么每次都重置、试过什么、为什么不管用
+docs/root-cause.md             根因、取证过程与已排除的做法
 ```
 
 ## 参考
