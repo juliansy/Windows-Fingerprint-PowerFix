@@ -7,7 +7,7 @@
 ![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![Release](https://img.shields.io/github/v/release/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&label=release&color=2ea44f)
-![Downloads](https://img.shields.io/github/downloads/juliansy/Windows-Fingerprint-PowerFix/total?style=for-the-badge&label=downloads&color=orange)
+[![Downloads](https://img.shields.io/github/downloads/juliansy/Windows-Fingerprint-PowerFix/total?style=for-the-badge&label=downloads&color=orange)](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip)
 ![License](https://img.shields.io/github/license/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=blue)
 ![Stars](https://img.shields.io/github/stars/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=yellow)
 
@@ -76,7 +76,7 @@ HKLM\SYSTEM\CurrentControlSet\Enum\<设备实例>\Device Parameters\WudfPowerPol
 
 ### 方法一：不使用命令行
 
-1. 打开 [Releases](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest)，在 **Assets** 里点 `Windows-Fingerprint-PowerFix-v2.0.zip` 下载；
+1. 点这里下载 [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip)，始终是最新版本；
 2. 把 zip 解压到一个你找得到的位置（例如桌面上新建一个文件夹）；
 3. 进入解压出来的文件夹，**双击 `install.cmd`**；
 4. UAC 弹窗里点「是」，等窗口自己跑完；

@@ -7,7 +7,7 @@
 ![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![Release](https://img.shields.io/github/v/release/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&label=release&color=2ea44f)
-![Downloads](https://img.shields.io/github/downloads/juliansy/Windows-Fingerprint-PowerFix/total?style=for-the-badge&label=downloads&color=orange)
+[![Downloads](https://img.shields.io/github/downloads/juliansy/Windows-Fingerprint-PowerFix/total?style=for-the-badge&label=downloads&color=orange)](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip)
 ![License](https://img.shields.io/github/license/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=blue)
 ![Stars](https://img.shields.io/github/stars/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=yellow)
 
@@ -76,7 +76,7 @@ Windows 10/11. The script elevates itself; you will see one UAC prompt — click
 
 ### Option 1: no command line
 
-1. Open the [Releases](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest) page and download `Windows-Fingerprint-PowerFix-v2.0.zip` from **Assets**;
+1. Download [`Windows-Fingerprint-PowerFix.zip`](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest/download/Windows-Fingerprint-PowerFix.zip) — this link always points at the latest release;
 2. extract the zip to a folder you can find (for example a new folder on the Desktop);
 3. open that folder and **double-click `install.cmd`**;
 4. click **Yes** on the UAC prompt and let the window finish;
