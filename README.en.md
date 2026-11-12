@@ -114,9 +114,7 @@ If detection picks the wrong device, pass the instance ID explicitly (Device Man
 .\install.ps1 -InstanceId 'USB\VID_XXXX&PID_YYYY\serial'
 ```
 
-Add `-SkipVerify` to install without running the task immediately.
-
-`-RemoveLegacyTasks` also removes fix tasks left behind by earlier versions.
+Add `-SkipVerify` to install without running the task immediately; add `-RemoveLegacyTasks` to also remove fix tasks left behind by earlier versions.
 
 If this fixed your problem, please give the repository a ⭐ Star.
 

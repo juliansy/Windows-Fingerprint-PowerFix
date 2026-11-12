@@ -114,9 +114,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 .\install.ps1 -InstanceId 'USB\VID_XXXX&PID_YYYY\序列号'
 ```
 
-只想装好、不想当场跑一次，加 `-SkipVerify`。
-
-`-RemoveLegacyTasks`：一并清理早先版本留下的修复任务。
+只想装好、不想当场跑一次，加 `-SkipVerify`；要一并清理早先版本留下的修复任务，加 `-RemoveLegacyTasks`。
 
 如果它解决了你的问题，欢迎点一个 ⭐ Star。
 
