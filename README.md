@@ -1,5 +1,23 @@
 # Windows-Fingerprint-PowerFix
 
+<div align="center">
+
+![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1%2B-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Release](https://img.shields.io/github/v/release/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&label=release&color=2ea44f)
+![Downloads](https://img.shields.io/github/downloads/juliansy/Windows-Fingerprint-PowerFix/total?style=for-the-badge&label=downloads&color=orange)
+![License](https://img.shields.io/github/license/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=blue)
+![Stars](https://img.shields.io/github/stars/juliansy/Windows-Fingerprint-PowerFix?style=for-the-badge&color=yellow)
+
+![No driver change](https://img.shields.io/badge/driver-untouched-success?style=flat-square)
+![No INF change](https://img.shields.io/badge/INF-untouched-success?style=flat-square)
+![No resident process](https://img.shields.io/badge/resident%20process-none-success?style=flat-square)
+![UAC](https://img.shields.io/badge/install-one%20UAC%20prompt-informational?style=flat-square)
+![Reboot](https://img.shields.io/badge/reboot-not%20required-informational?style=flat-square)
+![Language](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-informational?style=flat-square)
+
+</div>
+
 **摘要**：Windows 每次开机或重启，都会把指纹设备的「允许计算机关闭此设备以节省电源」重新勾上，传感器因此在睡眠前被断电，指纹唤醒与解锁随之失效。本仓库用一条 SYSTEM 计划任务，在每次设备启动后把该设置改回「关闭」并回读校验；不改驱动、不改 INF，一条命令安装，一条命令卸载。在一台 Acer SFX14-41G（EgisTec 1C7A:0575，Windows 11 现代待机）上经 5 次真实开机与睡眠验收：开机约 12 秒内恢复，睡眠后指纹唤醒并解锁正常。
 
 **着急的话 → [直接跳到安装](#安装)**。
