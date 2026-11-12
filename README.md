@@ -1,5 +1,7 @@
 # Windows-Fingerprint-PowerFix
 
+**简体中文** | [English](README.en.md)
+
 <div align="center">
 
 ![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white)
@@ -14,7 +16,7 @@
 ![No resident process](https://img.shields.io/badge/resident%20process-none-success?style=flat-square)
 ![UAC](https://img.shields.io/badge/install-one%20UAC%20prompt-informational?style=flat-square)
 ![Reboot](https://img.shields.io/badge/reboot-not%20required-informational?style=flat-square)
-![Language](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-informational?style=flat-square)
+![Language](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87%20%7C%20English-informational?style=flat-square)
 
 </div>
 
