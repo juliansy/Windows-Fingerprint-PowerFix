@@ -72,13 +72,32 @@ Not tied to one model: the installer enumerates every biometric device (class `B
 
 ## Installation
 
-Windows 10/11 and PowerShell 5.1 or later. The script elevates itself (one UAC prompt).
+Windows 10/11. The script elevates itself; you will see one UAC prompt — click **Yes**.
+
+### Option 1: no command line
+
+1. Open the [Releases](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest) page and download `Windows-Fingerprint-PowerFix-v2.0.zip` from **Assets**;
+2. extract the zip to a folder you can find (for example a new folder on the Desktop);
+3. open that folder and **double-click `install.cmd`**;
+4. click **Yes** on the UAC prompt and let the window finish;
+5. when the last line reads `OK ... IdleInWorkingState=0` it worked — press any key to close.
+
+Two prompts you may see are normal:
+
+- the blue "Windows protected your PC" window → click **More info** → **Run anyway**;
+- antivirus software (360, Huorong, ...) blocking PowerShell → choose **Allow** or **Trust**.
+
+### Option 2: command line
+
+PowerShell 5.1 or later (built into Windows 10/11) and git:
 
 ```powershell
 git clone https://github.com/juliansy/Windows-Fingerprint-PowerFix.git
 cd Windows-Fingerprint-PowerFix
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
+
+Both options meet here.
 
 **Device detection is automatic — no InstanceId to copy.** The installer lists what it found and runs the task once:
 
@@ -112,6 +131,8 @@ If this fixed your problem, please give the repository a ⭐ Star. Not for vanit
 
 ## Uninstall
 
+Double-click `uninstall.cmd`, or run this in the extracted folder:
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
 ```
@@ -137,6 +158,8 @@ Removes the task and restores the factory default for the device (power saving a
 ## Repository layout
 
 ```
+install.cmd                    double-click: calls install.ps1 (no command line needed)
+uninstall.cmd                  double-click: calls uninstall.ps1
 install.ps1                    install: self-elevate, detect devices, register task, self-check
 uninstall.ps1                  uninstall: self-elevate, remove task, restore factory default
 src/Disable-FpPowerSaving.ps1  the worker script the SYSTEM task runs

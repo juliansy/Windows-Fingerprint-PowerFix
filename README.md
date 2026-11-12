@@ -72,13 +72,32 @@ HKLM\SYSTEM\CurrentControlSet\Enum\<设备实例>\Device Parameters\WudfPowerPol
 
 ## 安装
 
-需要 Windows 10/11 与 PowerShell 5.1 以上。脚本自己申请管理员权限（一次 UAC 提示）。
+需要 Windows 10/11。脚本会自己申请管理员权限，中途弹一次 UAC，点「是」即可。
+
+### 方法一：不使用命令行
+
+1. 打开 [Releases](https://github.com/juliansy/Windows-Fingerprint-PowerFix/releases/latest)，在 **Assets** 里点 `Windows-Fingerprint-PowerFix-v2.0.zip` 下载；
+2. 把 zip 解压到一个你找得到的位置（例如桌面上新建一个文件夹）；
+3. 进入解压出来的文件夹，**双击 `install.cmd`**；
+4. UAC 弹窗里点「是」，等窗口自己跑完；
+5. 最后一行显示 `OK ... IdleInWorkingState=0` 就成功了，按任意键关闭窗口。
+
+遇到下面两个提示不要慌：
+
+- 蓝色窗口「Windows 已保护你的电脑」→ 点「更多信息」→「仍要运行」；
+- 杀毒软件（360、火绒等）提示拦截 PowerShell → 选择「允许」或「信任」。
+
+### 方法二：命令行
+
+需要 PowerShell 5.1 以上（Windows 10/11 自带）和 git：
 
 ```powershell
 git clone https://github.com/juliansy/Windows-Fingerprint-PowerFix.git
 cd Windows-Fingerprint-PowerFix
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
+
+两种方法到这里汇合。
 
 **设备识别是自动的，不需要手抄 InstanceId。** 脚本会列出识别到的设备并当场跑一次任务：
 
@@ -112,6 +131,8 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 ## 卸载
 
+双击 `uninstall.cmd`，或者在解压出来的文件夹里运行：
+
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
 ```
@@ -137,6 +158,8 @@ powershell -ExecutionPolicy Bypass -File .\uninstall.ps1
 ## 仓库结构
 
 ```
+install.cmd                    双击即可：调用 install.ps1（给不用命令行的人）
+uninstall.cmd                  双击即可：调用 uninstall.ps1
 install.ps1                    安装：自动提权、识别设备、注册任务、自检
 uninstall.ps1                  卸载：自动提权、删任务、恢复出厂默认
 src/Disable-FpPowerSaving.ps1  实际干活的脚本，由 SYSTEM 计划任务调用

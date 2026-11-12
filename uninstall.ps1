@@ -30,8 +30,13 @@ if (-not $isAdmin) {
     if ($KeepDeviceSetting) { $argList += '-KeepDeviceSetting' }
     if ($Purge) { $argList += '-Purge' }
     Write-Host 'Requesting administrator rights...'
-    Start-Process -FilePath 'powershell.exe' -ArgumentList $argList -Verb RunAs | Out-Null
-    exit
+    try {
+        $p = Start-Process -FilePath 'powershell.exe' -ArgumentList $argList -Verb RunAs -PassThru -Wait -ErrorAction Stop
+        exit $p.ExitCode
+    } catch {
+        Write-Host 'Administrator rights were declined.'
+        exit 1
+    }
 }
 
 function Step([string]$m) { Write-Host ('[*] ' + $m) }
