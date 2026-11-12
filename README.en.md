@@ -87,6 +87,8 @@ Two prompts you may see are normal:
 - the blue "Windows protected your PC" window → click **More info** → **Run anyway**;
 - antivirus software (360, Huorong, ...) blocking PowerShell → choose **Allow** or **Trust**.
 
+If this fixed your problem, please give the repository a ⭐ Star.
+
 ### Option 2: command line
 
 PowerShell 5.1 or later (built into Windows 10/11) and git:

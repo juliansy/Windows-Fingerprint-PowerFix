@@ -87,6 +87,8 @@ HKLM\SYSTEM\CurrentControlSet\Enum\<设备实例>\Device Parameters\WudfPowerPol
 - 蓝色窗口「Windows 已保护你的电脑」→ 点「更多信息」→「仍要运行」；
 - 杀毒软件（360、火绒等）提示拦截 PowerShell → 选择「允许」或「信任」。
 
+如果它解决了你的问题，欢迎点一个 ⭐ Star。
+
 ### 方法二：命令行
 
 需要 PowerShell 5.1 以上（Windows 10/11 自带）和 git：
