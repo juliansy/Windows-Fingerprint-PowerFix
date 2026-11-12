@@ -118,8 +118,6 @@ If detection picks the wrong device, pass the instance ID explicitly (Device Man
 
 Add `-SkipVerify` to install without running the task immediately; add `-RemoveLegacyTasks` to also remove fix tasks left behind by earlier versions.
 
-If this fixed your problem, please give the repository a ⭐ Star.
-
 ## Verify
 
 1. Reboot;
